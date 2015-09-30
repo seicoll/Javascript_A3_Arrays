@@ -1,1 +1,2 @@
-# Javascript_A3_Arrays
+# Javascript
+Activitat 3. Arrays
