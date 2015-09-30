@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>DNI</title>
+    <meta charset="UTF-8">
+
+    <script>
+        /*Fes una funció que demani 5 valors numèrics i que et digui si hi ha 
+        algun valor repetit. A més, si un dels valors és 0, s’aturarà a l’instant. 
+        Cal fer l’exercici utilitzant dues funcions diferents:
+            - La primera funció realitza el procés de demanar 5 número i guardar 
+            els valors en un array.
+            - L’altra funció realitza el procés de buscar si hi ha ha valors 
+            repetits.
+        */
+
+        function demanarValors()
+        {
+            var arrayValors = [];
+            var valorActual;
+            for(var i=0;i<5;i++)
+            {
+               valorActual = prompt("Introdueix el valor " + i +":");
+               if (valorActual==0) {
+                   // finalitzem la funció
+                   return false
+               }
+               else {
+                   //guadem el valor introduit a l'array
+                   arrayValors[i] = valorActual;
+               }
+            }
+            return arrayValors;
+        }
+        
+        function teRepetits(valors)
+        {
+            // recorrem els elements de l'array fins el penúltim element
+            for (var i=0;i<valors.length-1;i++)
+            {
+                //estem en un valor i mirem si és igual a algun altre valor de l'array
+                //només hem de mirar els valors següents perquè els anteriors ja han estat revisats
+                for (var j=i+1;j<valors.length;j++)
+                {
+                    if (valors[i]==valors[j])
+                    {
+                        //hem trobat un valor repetit
+                        return true;
+                    }
+                    
+                }
+            }
+            //no s'ha trobat cap valor repetit
+            return false
+        }
+        
+        var arrayValors = [];
+        arrayValors = demanarValors();
+        if (teRepetits(arrayValors)){
+            alert ("Hi ha valors repetits.");
+        }
+        else {
+             alert ("No hi ha valors repetits.");
+        }
+ 
+       
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

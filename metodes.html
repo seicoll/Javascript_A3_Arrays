@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>DNI</title>
+    <meta charset="UTF-8">
+
+    <script>
+        /*Fes una funció anomenada max(a) que ha de rebre un array com a paràmetre
+                i ha de retornar el valor màxim de tots els números de l’array. Cal fer 
+                servir el mètode isArray de la classe Array per comprovar que el paràmetre
+                és un array. max([1,2,3])-> 3
+                */
+
+        function metodes(cadena) {
+
+            //Dividim la frase en paraules amb el separador " "
+            var a = cadena.split(" ");
+
+            console.log("El nombre de paraules és: " + a.length);
+
+            console.log("La primera paraula és: " + a[0]);
+
+            console.log("La última paraula és:" + a[a.length - 1]);
+
+            console.log("Les paraules en ordre invers són: " + a.reverse().join(" "));
+
+            console.log("Les paraules ordenades de la a a la z són: " + a.sort().join(" "));
+
+            console.log("Les paraules ordenades de la z a la a són: " + a.sort().reverse().join(" "));
+
+            //Reiniciem l'array a l'estat inicial
+            a = cadena.split(" ");
+            a.push("espero");
+            console.log("Inserim una paraula al final: " + a.join(" "));
+
+            a.unshift("Potser");
+            console.log("Inserim una paraula a l'inici: " + a.join(" "));
+
+        }
+
+        console.log("Crida a la funció metodes('Avui serà un gran dia')");
+        
+        metodes("Avui serà un gran dia")
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

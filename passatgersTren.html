@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>Llista de passatgers</title>
+    <meta charset="UTF-8">
+
+    <script>
+        /*
+         */
+
+        function afegirPassatger(nom, llista) {
+            if (llista.length == 0) //No hi ha cap passatger
+            {
+                llista.push(nom); //afegim un nom element al final
+            }
+            else {
+                for (var i = 0; i < llista.length; i++) {
+                    if (llista[i] == undefined) //Si trobem una posició lliure
+                    {
+                        llista[i] = nom; //guardem el nom a aquella posició
+                        return llista;
+                    }
+                    else if (i == llista.length - 1) { //Si hem arribat al final de la llista
+                        llista.push(nom); // afegim un nou element al final
+                        return llista;
+                    }
+                }
+            }
+        }
+
+        function treurePassatger(nom, llista) {
+            if (llista.length == 0) //No hi ha cap passatger
+            {
+                console.write("La llista està buida.");
+            }
+            else {
+                for (var i = 0; i < llista.length; i++) {
+                    if (llista[i] == nom) //Si trobe el nom a la llista
+                    {
+                        llista[i] = undefined; //treiem el nom de la llista posant la posició a undefined
+                        return llista;
+                    }
+                    else if (i == llista.length - 1) { //Si hem arribat al final de la llista
+                        console.log("No s'ha trobat el passatger.");
+                    }
+                }
+            }
+            return llista; //Si la llista és buida o no s'ha trobat el passatger, retornem la mateixa llista.
+        }
+
+
+        //Exemple d'execució
+        var llista = ["Marc", "Sandra", "Lídia"];
+        console.log(llista);
+        llista = afegirPassatger("Martí", llista);
+        console.log(llista);
+        llista = afegirPassatger("Laura", llista);
+        console.log(llista);
+        llista = treurePassatger("Sandra", llista);
+        console.log(llista);
+        llista = afegirPassatger("Jordi", llista);
+        console.log(llista);
+        llista = treurePassatger("Gerard", llista);
+        console.log(llista);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

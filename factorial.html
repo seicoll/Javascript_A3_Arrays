@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>Factorial d'un array</title>
+    <meta charset="UTF-8">
+
+    <script>
+        /*
+         */
+
+        function factorial(n) {
+            if (typeof(n) != "number")
+                throw "S'ha d'entrar un nombre";
+            if (n === 1)
+                return 1;
+            return n * factorial(n - 1);
+        }
+
+        function ferFactorial(a) {
+            if (!Array.isArray(a))
+                throw "El paràmetre no és un array";
+            var sortida = [];
+            for (var i = 0; i < a.length; ++i) {
+                if (typeof(a[i]) != "number")
+                    throw "El element de la posició " + (i + 1) + " no és un nombre";
+                sortida[i] = factorial(a[i]);
+            }
+            return sortida;
+        }
+        
+        console.log("Cria a la funció ferFactorial([3,5,8])");
+        console.log("Resultat: " + ferFactorial([3,5,8]));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

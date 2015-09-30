@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>Shallow copy</title>
+    <meta charset="UTF-8">
+
+    <script>
+        /*
+        Crea una funció que li passes dos paràmetres. La funció ha de fer una 
+        còpia del primer paràmetre al segon si tots dos són arrays. Si algun dels 
+        parametres no és un array retorna un missatge d’error.
+        Comprova que al modificar l’array copiat, no es modifica l’array original.
+         */
+
+        function copiar(a, b) {
+            if (!Array.isArray(a))
+                throw "El primer paràmetre ha de ser un array";
+            if (!Array.isArray(b))
+                throw "El segon paràmetre ha de ser un array";
+            for (var i = 0; i < a.length; i++) {
+                b[i] = a[i];
+            }
+        }
+
+
+        //Mostrem un exemple de crida a la funció
+        var arrayOriginal = [3,5,8];
+        var arrayCopiat = [];
+        
+        console.log("arrayOriginal:");
+        console.log(arrayOriginal);
+        console.log("arrayCopiat:"); 
+        console.log(arrayCopiat);
+        console.log("Cria a la funció copiar(arrayOriginal,arrayCopiat)");
+        copiar(arrayOriginal,arrayCopiat)
+        console.log("arrayCopiat:")
+        console.log(arrayCopiat);
+        
+        //Modifiquem l'array copiat per comprova que no es modifica l'array original
+        console.log("Exectutem arrayCopiat[0] = 0")
+        arrayCopiat[0] = 0;
+        console.log("arrayCopiat:"); 
+        console.log(arrayCopiat);
+         console.log("arrayOriginal:");
+        console.log(arrayOriginal);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

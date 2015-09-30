@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>Matriu</title>
+    <meta charset="UTF-8">
+
+    <script>
+        var a = [
+            [3, 2, 1],
+            [1, 1, 3],
+            [0, 2, 1],
+        ];
+
+        var b = [
+            [2,1],
+            [1,0],
+            [3,2]
+        ];
+
+        document.write("Matriu a <br>");
+        document.write(a.join("<br>") + "<br>");
+        document.write("Matriu b <br>");
+        document.write(b.join("<br>") + "<br>");
+
+        var ma = a.length;
+        var na = a[0].length;
+        var mb = b.length;
+        var nb = b[0].length;
+        
+        //Iniciem la matriu resultat amb valors 0
+        var p = new Array();
+        for (i = 0; i < ma; i++) {
+            p[i] = new Array();
+            for (j = 0; j < nb; j++) {
+                p[i][j] = 0;
+            }
+        }
+        
+        /* Comprovem que el número de columnes de la primer matriu és igual 
+        al número de files de la segona.*/
+        if (na == mb) {
+            for (var i = 0; i < ma; i++) {
+                for (var j = 0; j < nb; j++) {
+                    p[i][j] = 0;
+                    for (var k = 0; k < na; k++) {
+                        p[i][j] = p[i][j] + a[i][k] * b[k][j];
+                    }
+                }
+            }
+        }
+        else {
+            console.log("No es pot realitzar el producte de les dues matrius.");
+        }
+
+        document.write("Matriu resultat:<br>");
+        document.write(p.join("<br>") + "<br>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

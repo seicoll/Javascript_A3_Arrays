@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>DNI</title>
+    <meta charset="UTF-8">
+
+    <script>
+        /*Fes una funció anomenada max(a) que ha de rebre un array com a paràmetre
+        i ha de retornar el valor màxim de tots els números de l’array. Cal fer 
+        servir el mètode isArray de la classe Array per comprovar que el paràmetre
+        és un array. max([1,2,3])-> 3
+        */
+
+        function max(a) {
+            var suma = 0;
+            if (!Array.isArray(a)) {
+                throw "Error: El parametre ha de ser un array!"
+            }
+            else {
+                var maxim = a[0];
+                for (var i = 1; i < a.length; i++) {   //for (i in a)
+                    if (a[i] > maxim) {
+                        maxim = a[i];
+                    }
+                }
+                return maxim
+            }
+        }
+
+        console.log("Crida a la funció max([1,2,3])");
+        console.log("El valor màxim és " + max([1, 2, 3]));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>Matriu</title>
+    <meta charset="UTF-8">
+
+    <script>
+        /*
+                var matriu = [
+                    [1, 4, -5],
+                    [9, -2, -3],
+                    [5, 2, 8]
+                ];
+                */
+                
+        var matriu = [
+            [1, 4, -5, 2],
+            [9, -2, -3, 1],
+            [5, 2, 8, 5],
+            [1, 6, 3, 4],
+        ];
+
+        document.write(matriu.join("<br>") + "<br>");
+
+        var suma = 0;
+        var mitjana = 0;
+        var nombreElements = 0;
+        var min = matriu[0][0];
+        var max = matriu[0][0];
+        var elementActual;
+        var diagonal = 0;
+        var antidiagonal = 0;
+
+        for (var fila = 0; fila < matriu.length; fila++) {
+            for (var col = 0; col < matriu[fila].length; col++) {
+                elementActual = matriu[fila][col];
+                suma += elementActual;
+
+                //Comprovem si és l'element més petit
+                if (elementActual < min) {
+                    min = elementActual;
+                }
+
+                //Comprovem si és l'element més gran
+                if (elementActual > max) {
+                    max = elementActual;
+                }
+
+                //Sumem valors diagonal
+                if (fila == col) {
+                    diagonal += elementActual;
+                }
+
+                //Sumem valors diagonal
+                if (fila == (matriu.length - 1) - col) {
+                    antidiagonal += elementActual;
+                    document.write(elementActual + "<br>");
+                }
+            }
+        }
+
+        nombreElements = Math.pow(matriu.length, 2);
+        document.write("La mitjana dels valors és " + (suma / nombreElements) + "<br>");
+        document.write("El mínim és " + min + "<br>");
+        document.write("El màxim és " + max + "<br>");
+        document.write("La suma de la diagonal és " + diagonal + "<br>");
+        document.write("La suma de l'antidiagonal és " + antidiagonal + "<br>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

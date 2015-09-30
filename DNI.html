@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>DNI</title>
+    <meta charset="UTF-8">
+
+    <script>
+        /*Crea un script que faci la comprovació de la lletra del DNI*/
+
+        var lletres = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+        var numero = prompt("Introdueix el teu número de DNI (sense la lletra)");
+        var lletra = prompt("Introdueix la teva lletra del DNI (en majúscules)");
+        lletra = lletra.toUpperCase();
+
+        if (numero < 0 || numero > 99999999) {
+            alert("El número introduit no és vàlid");
+        }
+        else {
+            var lletraCalculada = lletres[numero % 23];
+            if (lletraCalculada != lletra) {
+                alert("La lletra o el número introduits no són correctes");
+            }
+            else {
+                alert("El número de DNI i la seva lletra són correctes");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
